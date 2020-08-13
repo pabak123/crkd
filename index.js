@@ -17,7 +17,7 @@ client.on("guildMemberAdd", (member) => {
 
   welcomeChannel.send(`<@${newUser.id}> ${welcomeChannelComment}\n`);
 
-  member.addRole(guild.roles.find(role => role.name == "게스트"));
+  member.addRole(guild.roles.find(role => role.name == "TEAM CR | 입단대기자"));
 });
 
 client.on("guildMemberRemove", (member) => {
@@ -52,14 +52,13 @@ client.on('message', (message) => {
       .setTimestamp()
       .setFooter('케이쥐가 만듬', img)
 
-    message.channel.send(!명령어)
-  } else if(message.content == 'embed2') {
+    message.channel.send(embed)
+  } else if(message.content == '!명령어') {
     let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
     let commandList = [
-      {name: '!스크림', desc: '현재 핑 상태'},
-      {name: '!클랜', desc: 'embed 예제1'},
-      {name: '!명령어', desc: 'embed 예제2 (help)'},
-      {name: '!dm공지', desc: 'dm으로 전체 공지 보내기'},
+      {name: '!스크림', desc: '스크림 신청시 필독할거'},
+      {name: '!클랜', desc: 'CR클랜에 메시지'},
+      {name: '!명령어', desc: '클랜본 명령어'},
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
