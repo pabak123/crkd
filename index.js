@@ -7,7 +7,7 @@ const welcomeChannelComment = "어서오세요.";
 const byeChannelComment = "안녕히가세요.";
 
 client.on('ready', () => { console.log("Bot is ready!")
-client.user.setPresence({ game: { name: 'CR클랜' }, status: 'broadcast' }) });
+client.user.setPresence({ game: { name: 'CR클랜' }, status: 'broadcasting' }) });
 
 client.on("guildMemberAdd", (member) => {
   const guild = member.guild;
