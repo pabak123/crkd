@@ -10,6 +10,8 @@ client.on('ready', () => {
   console.log('켰다.');
 });
 
+client.user.setPresence({ game: { name: 'CR클랜' }, status: 'online' }) });
+
 client.on("guildMemberAdd", (member) => {
   const guild = member.guild;
   const newUser = member.user;
