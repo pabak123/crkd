@@ -36,7 +36,7 @@ client.on('message', (message) => {
   }
 
   if(message.content == '!클랜') {
-    let img = 'https://cdn.discordapp.com/icons/419671192857739264/6dccc22df4cb0051b50548627f36c09b.webp?size=256';
+    let img = 'https://cdn.discordapp.com/attachments/739378453895315507/742615745141407744/gfsdsfdsdf.png?size=256';
     let embed = new Discord.RichEmbed()
       .setTitle('CR클랜')
       .setURL('https://discord.gg/kwykahw')
