@@ -47,7 +47,7 @@ client.on('message', (message) => {
       .addField('흥보', '흥보를 해서 클랜원 100명이 되면 추첨을통해 문상을 드립니다.', true)
       .addField('누르고 싶은 클랜', 'PKN', true)
       .addField('블랙리스트', '운젠입니다. 권력남용과 악성질을 많이 하였으므로 블랙입니다.', true)
-      .addField('흥보링크', 'https://discord.gg/kwykahw\케이쥐를 클릭하거나\nCR클랜 글자를 클릭\n')
+      .addField('흥보링크', 'https://discord.gg/kwykahw\n케이쥐를 클릭하거나\nCR클랜 글자를 클릭\n')
       .addBlankField()
       .setTimestamp()
       .setFooter('케이쥐가 만듬', img)
