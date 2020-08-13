@@ -52,7 +52,7 @@ client.on('message', (message) => {
       .setTimestamp()
       .setFooter('케이쥐가 만듬', img)
 
-    message.channel.send(embed)
+    message.channel.send(!명령어)
   } else if(message.content == 'embed2') {
     let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
     let commandList = [
