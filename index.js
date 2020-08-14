@@ -5,9 +5,9 @@ const moment = require("moment");
 require("moment-duration-format");
 const momenttz = require('moment-timezone');
 const MessageAdd = require('./db/message_add.js')
-const welcomeChannelName = "💡입퇴장💡";
-const byeChannelName = "💡입퇴장💡";
-const welcomeChannelComment = "어서오세요. #💬📋입단_신청📋💬에서 입단테스트 보고싶은 날짜와 시간을 적어주세요!";
+const welcomeChannelName = "안녕하세요";
+const byeChannelName = "안녕히가세요";
+const welcomeChannelComment = "어서오세요.";
 const byeChannelComment = "안녕히가세요.";
 
 client.on('ready', () => {
@@ -22,7 +22,7 @@ client.on("guildMemberAdd", (member) => {
 
   welcomeChannel.send(`<@${newUser.id}> ${welcomeChannelComment}\n`);
 
-  member.addRole(guild.roles.find(role => role.name == "TEAM CR | 입단대기자"));
+  member.addRole(guild.roles.find(role => role.name == "게스트"));
 });
 
 client.on("guildMemberRemove", (member) => {
@@ -107,7 +107,7 @@ client.on('message', (message) => {
     let embed = new Discord.RichEmbed()
       .setAuthor('Help of TEAM CR BOT', helpImg)
       .setColor('#186de6')
-      .setFooter(`TEAM CR BOT`)
+      .setFooter(`TEAAN CR BOT`)
       .setTimestamp()
     
     commandList.forEach(x => {
