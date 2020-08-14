@@ -8,7 +8,7 @@ const byeChannelComment = "안녕히가세요.";
 
 client.on('ready', () => {
   console.log('켰다.');
-  client.user.setPresence({ game: { name: 'PLAYERUNKNOWNS BATTLEGROUNDS' }, status: 'online' })
+  client.user.setPresence({ game: { name: '!help를 쳐보세요.' }, status: 'online' })
 });
 
 client.on("guildMemberAdd", (member) => {
@@ -18,7 +18,7 @@ client.on("guildMemberAdd", (member) => {
 
   welcomeChannel.send(`<@${newUser.id}> ${welcomeChannelComment}\n`);
 
-  member.addRole(guild.roles.find(role => role.name == "TEAM CR | 입단대기자"));
+  member.addRole(guild.roles.find(role => role.name == "TEAM CR"));
 });
 
 client.on("guildMemberRemove", (member) => {
@@ -33,10 +33,10 @@ client.on('message', (message) => {
   if(message.author.bot) return;
 
   if(message.content == '!스크림') {
-    return message.reply('데일리,km 디코방을 필수로 들어가 있어주세요 https://discord.gg/w4jaMgH https://discord.gg/rpDZrab ');
+    return message.reply('KM, 데일리를 주로 달리고 있습니다. 그래서 데일리,km 디코방을 필수로 들어가 있어주세요 https://discord.gg/w4jaMgH https://discord.gg/rpDZrab');
   }
 
-  if(message.content == '!클랜') {
+  if(message.content == 'embed') {
     let img = 'https://cdn.discordapp.com/attachments/739378453895315507/742615745141407744/gfsdsfdsdf.png?size=256';
     let embed = new Discord.RichEmbed()
       .setTitle('CR클랜')
@@ -44,31 +44,33 @@ client.on('message', (message) => {
       .setAuthor('케이쥐', img, 'https://discord.gg/kwykahw')
       .setThumbnail(img)
       .addBlankField()
-      .addField('클랜장', '코일과 케이쥐가 손잡고 만든클랜입니다.')
-      .addField('흥보', '흥보를 해서 클랜원 100명이 되면 추첨을통해 문상을 드립니다.', true)
+      .addField('클랜장', '코일과 케이쥐가 손잡고 만든 클랜입니다.')
+      .addField('흥보', '흥보를 해서 클랜원 100명이 되면 추첨을 통해 문상을 드립니다.', true)
       .addField('누르고 싶은 클랜', 'PKN', true)
-      .addField('블랙리스트', '운젠입니다. 권력남용과 악성질을 많이 하였으므로 블랙입니다.', true)
+      .addField('블랙리스트', '운젠입니다. 권력남용과 악성질을 많이 하였으므로 블랙으로 선정했습죠', true)
       .addField('흥보링크', 'https://discord.gg/kwykahw\n케이쥐를 클릭하거나\nCR클랜 글자를 클릭\n')
       .addBlankField()
       .setTimestamp()
       .setFooter('케이쥐가 만듬', img)
 
-      message.channel.send(embed)
-    } else if(message.content == '!help') {
-      let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
-      let commandList = [
-        {name: '!help', desc: 'help'},
-        {name: '!스크림', desc: '스크림 신청 시 필독해야 할것'},
-        {name: '!클랜', desc: '클랜장의 이야기'},
-        {name: '!청소', desc: '텍스트 지움'},
-        {name: '!초대코드', desc: '해당 채널의 초대 코드 표기'},
-      ];
+    message.channel.send(embed)
+  } else if(message.content == '!help') {
+    let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
+    let commandList = [
+      {name: '!help', desc: 'help'},
+      {name: '!스크림', desc: '현재 스크림 필독'},
+      {name: '!클랜', desc: '클랜장이 하고 싶은 말'},
+      {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
+      {name: '!전체공지2', desc: 'dm으로 전체 embed 형식으로 공지 보내기'},
+      {name: '!청소', desc: '채팅청소'},
+      {name: '!초대코드', desc: '해당 채널의 초대 코드 표기'},
+      {name: '!초대코드2', desc: '봇이 들어가있는 모든 채널의 초대 코드 표기'},
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
-      .setAuthor('Help of TEAM CR BOT', helpImg)
+      .setAuthor('Help of TEAM CR', helpImg)
       .setColor('#186de6')
-      .setFooter(`TEAM CR BOT`)
+      .setFooter(`TEAM CR`)
       .setTimestamp()
     
     commandList.forEach(x => {
@@ -108,9 +110,9 @@ client.on('message', (message) => {
     if(message.member != null) { // 채널에서 공지 쓸 때
       let contents = message.content.slice('!전체공지2'.length);
       let embed = new Discord.RichEmbed()
-        .setAuthor('TEAM CR 드림')
+        .setAuthor('공지 of 콜라곰 BOT')
         .setColor('#186de6')
-        .setFooter(`TEAM CR`)
+        .setFooter(`콜라곰 BOT ❤️`)
         .setTimestamp()
   
       embed.addField('공지: ', contents);
