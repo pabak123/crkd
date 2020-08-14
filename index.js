@@ -5,7 +5,7 @@ const moment = require("moment");
 require("moment-duration-format");
 const momenttz = require('moment-timezone');
 const MessageAdd = require('./db/message_add.js')
-const welcomeChannelName = "💡입퇴장💡";
+const welcomeChannelName = "안녕하세요";
 const byeChannelName = "💡입퇴장💡";
 const welcomeChannelComment = "어서오세요.";
 const byeChannelComment = "안녕히가세요.";
