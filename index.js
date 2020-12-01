@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = process.argv.length == 2 ? process.env.token : "";
+const token = 'NzM3OTUzNTA1Mjc2NDYxMTE3.XyE2wg.d_ZLpKFXSBnrjkmzmUHK5iYuq_s';
 const welcomeChannelName = "안녕하세요";
 const byeChannelName = "안녕히가세요";
 const welcomeChannelComment = "어서오세요.";
@@ -30,11 +30,17 @@ client.on("guildMemberRemove", (member) => {
 });
 
 client.on('message', (message) => {
+  if(message.channel.type == 'dm') return
+  if(!message.content.startsWith(config.prefix)) return
+ 
+  if(message.content.startsWith(config.prefix + 'ping')) {
+    message.channel.send(client.ping + ' ms')
+  }
+})
+
+client.on('message', (message) => {
   if(message.author.bot) return;
 
-  if(message.content == 'ping') {
-    return message.reply('pong');
-  }
 
   if(message.content == '!월요일') {
     let img = 'https://cdn.discordapp.com/attachments/780339994467893278/782908608840466442/2aed7a5f5a0b59c7.png';
@@ -49,12 +55,12 @@ client.on('message', (message) => {
       .setFooter('상갈중', img)
 
     message.channel.send(embed)
-  } else if(message.content == 'embed2') {
+  } else if(message.content == '!명령어') {
     let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
     let commandList = [
-      {name: 'ping', desc: '현재 핑 상태'},
-      {name: 'embed', desc: 'embed 예제1'},
-      {name: 'embed2', desc: 'embed 예제2 (help)'},
+      {name: '!(오늘요일)', desc: '오늘의 시간표를 보여줘요!'},
+      {name: '!김영채', desc: '김영채의 실체를 알려줘요!'},
+      {name: '', desc: 'embed 예제2 (help)'},
       {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
     ];
     let commandStr = '';
