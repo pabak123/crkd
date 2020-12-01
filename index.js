@@ -41,6 +41,9 @@ client.on('message', (message) => {
 client.on('message', (message) => {
   if(message.author.bot) return;
 
+  if(message.content == 'ping') {
+    return message.reply('pong');
+  }
 
   if(message.content == '!월요일') {
     let img = 'https://cdn.discordapp.com/attachments/780339994467893278/782908608840466442/2aed7a5f5a0b59c7.png';
