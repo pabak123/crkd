@@ -54,7 +54,7 @@ client.on('message', (message) => {
     let commandList = [
       {name: '!(오늘요일)', desc: '오늘의 시간표를 보여줘요!'},
       {name: '!김영채', desc: '김영채의 실체를 알려줘요!'},
-      {name: '', desc: 'embed 예제2 (help)'},
+      {name: '엄준식', desc: 'embed 예제2 (help)'},
       {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
     ];
     let commandStr = '';
