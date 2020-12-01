@@ -30,15 +30,6 @@ client.on("guildMemberRemove", (member) => {
 });
 
 client.on('message', (message) => {
-  if(message.channel.type == 'dm') return
-  if(!message.content.startsWith(config.prefix)) return
- 
-  if(message.content.startsWith(config.prefix + 'ping')) {
-    message.channel.send(client.ping + ' ms')
-  }
-})
-
-client.on('message', (message) => {
   if(message.author.bot) return;
 
   if(message.content == 'ping') {
