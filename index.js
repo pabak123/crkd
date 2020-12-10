@@ -8,7 +8,7 @@ const byeChannelComment = "안녕히가세요.";
 
 client.on('ready', () => {
   console.log('켰다.');
-  client.user.setPresence({ game: { name: '엄준식이랑' }, status: 'online' })
+  client.user.setPresence({ game: { name: '!도움말을 쳐보세요.' }, status: 'online' })
 });
 
 client.on("guildMemberAdd", (member) => {
@@ -49,7 +49,7 @@ client.on('message', (message) => {
       .setFooter('상갈중', img)
 
     message.channel.send(embed)
-  } else if(message.content == '!명령어') {
+  } else if(message.content == '!') {
     let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
     let commandList = [
       {name: '!(오늘요일)', desc: '오늘의 시간표를 보여줘요!'},
