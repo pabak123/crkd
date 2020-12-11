@@ -49,7 +49,7 @@ client.on('message', (message) => {
       .setFooter('상갈중', img)
 
     message.channel.send(embed)
-  } else if(message.content == '!') {
+  } else if(message.content == '!도움말') {
     let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
     let commandList = [
       {name: '!(오늘요일)', desc: '오늘의 시간표를 보여줘요!'},
