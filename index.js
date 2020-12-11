@@ -54,8 +54,7 @@ client.on('message', (message) => {
     let commandList = [
       {name: '!(오늘요일)', desc: '오늘의 시간표를 보여줘요!'},
       {name: '!김영채', desc: '김영채의 실체를 알려줘요!'},
-      {name: '엄준식', desc: 'embed 예제2 (help)'},
-      {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
+      {name: '엄준식', desc: '준식이형 사랑해'},
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
@@ -92,8 +91,8 @@ client.on('message', (message) => {
 client.on('message', (message) => {
   if(message.author.bot) return;
 
-  if(message.content == 'ping') {
-    return message.reply('pong');
+  if(message.content == '엄준식') {
+    return message.reply('엄준식은 살아있어! 준식이형 사랑해');
   }
 
   if(message.content == '!화요일') {
